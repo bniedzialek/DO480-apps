@@ -1,0 +1,15 @@
+apiVersion: route.opensh
+kind: Route
+metadata:
+  labels:
+    app: todonodejs
+    name: frontend
+  name: frontend
+spec:
+  host: todo.apps.ocp4-m
+  path: "/todo"
+  to:
+    kind: Service
+    name: prod-frontend
+    weight: 100
+  wildcardPolicy: None
